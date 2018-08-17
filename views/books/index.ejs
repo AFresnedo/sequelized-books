@@ -24,6 +24,7 @@
         url: url
       }).done(function(data) {
         console.log('success message:', data);
+        window.location = '/books';
       }).fail(function(err) {
         console.log('fail msg:', err);
       });

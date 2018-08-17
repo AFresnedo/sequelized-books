@@ -59,7 +59,7 @@ router.delete('/:id', function(req,res) {
     where: { id: req.params.id }
   }).then(function(recentlyDestroyed){
     console.log('deleted:', recentlyDestroyed);
-    res.send('successfully deleted!');
+    res.send('successful');
   }).catch(function(err){
     console.log('err', err);
     res.send('delete failed, not found');
