@@ -18,3 +18,12 @@ sequelize init
     (credentials)
     (change to postgres)
     (set your chosen database name)
+sequelize model:create
+    (id, createdAt, updateAt are defaulted to being added as cols)
+    (--name table) (table in this case is "book")
+                   (convention: all lowercase, singular)
+    (--attributes "colone:string coltwo:integer") (title:string,author:string)
+                                                  (above is alternate syntax)
+sequelize db:migrate
+(runs up function)
+(sequelize db:migrate:undo to run down function)
