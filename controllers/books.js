@@ -52,5 +52,19 @@ router.get('/:id', function(req, res) {
   });
 });
 
+// TODO caution: not tested yet
+router.delete('/:id', function(req,res) {
+  db.book.destroy({
+    // note that where has its own curly braces...???
+    where: { id: req.params.id }
+  }).then(function(recentlyDestroyed){
+    console.log('deleted:', recentlyDestroyed);
+    res.send('successfully deleted!');
+  }).catch(function(err){
+    console.log('err', err);
+    res.send('delete failed, not found');
+  });
+});
+
 // export router so other files can use it
 module.exports = router;

@@ -6,6 +6,27 @@
   by <%= b.author %>
   </p>
   <p>It's <%= b.pages %> pages long.</p>
+  <a class="delete-btn" href="/books/<%= b.id %>">Delete this book!</a>
   <hr>
 </div>
 <% }); %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+    console.log('ajax reached in index');
+    $('.delete-btn').click(function(e) {
+      e.preventDefault();
+      var url= $(this).attr('href');
+
+      $.ajax({
+        method: "DELETE",
+        url: url
+      }).done(function(data) {
+        console.log('success message:', data);
+      }).fail(function(err) {
+        console.log('fail msg:', err);
+      });
+    });
+  });
+</script>
