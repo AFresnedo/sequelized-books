@@ -8,6 +8,13 @@ touch .gitignore
 (add node_modules, .env to .gitignore)
 git init
 (make git repository on github)
+(need github link for below, instruc on another line for copy-paste)
 git remote add github
-(link for above, on another line for copy-paste)
-git push --set-upstream github maseter
+git push --set-upstream github master
+(need name of db in below line, instruc on another line for copy-paste)
+create db
+sequelize init
+(change config.json)
+    (credentials)
+    (change to postgres)
+    (set your chosen database name)
