@@ -1,4 +1,5 @@
 (use env variable for user/pass when using real user/pass)
+(express generator gives you the basic startup, boilerplate setup also good)
 mkdir folder for app
 sudo npm init -y
 sudo npm i express ejs express-ejs-layouts body-parser
