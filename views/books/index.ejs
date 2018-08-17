@@ -1,1 +1,8 @@
-<p>these are all the books! what, you don't see them?</p>
+<h2>Books</h2>
+<% books.forEach(function(b){ %>
+<div>
+  <p><%= b.title %> <%= b.author %></p>
+  <p>It's <%= b.pages %> pages long.</p>
+  <hr>
+</div>
+<% }); %>
