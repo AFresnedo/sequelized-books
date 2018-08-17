@@ -11,7 +11,6 @@ router.get('/', function(req, res){
   // "then" because it's async
   // "books" is the data returned, in this case an array of all items
   db.book.findAll().then(function(books){
-    console.log('books returned:', books);
     // this is INSIDE of the promise because otherwise it will render before
     // data arrives
     // relative to /views but not /books
@@ -21,6 +20,26 @@ router.get('/', function(req, res){
   }).catch(function(err) {
     console.log('findAll books failed', err)
     res.send('this is my 404, iz very nice');
+  });
+});
+
+router.get('/new', function(req, res) {
+  res.render('books/new');
+});
+
+router.post('/', function(req, res) {
+  // // below was shorthand for this (because of name= in form):
+  // db.book.create({
+    // title: req.body.title,
+    // author: req.body.author,
+    // pages: req.body.pages
+  // });
+  // so body is the thing sent by the form directly (no ajax)
+  db.book.create(req.body).then(function(createdBook) {
+    res.redirect('/books');
+  }).catch(function(err) {
+    console.log('posting error', err);
+    res.send('beautiful 404');
   });
 });
 

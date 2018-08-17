@@ -1,0 +1,10 @@
+<h1>Add a book!</h1>
+
+<form method="POST" action="/books">
+  <!-- use name=title and name=author so that sequelize can match to db
+    (easier, less writing, not required afaik) -->
+  Title: <input name="title" required>
+  Author: <input name="author">
+  Pages: <input type="number" name="pages">
+  <input type="submit" value="add">
+</form>
