@@ -36,3 +36,5 @@ setup index.js
     (add any use statements needed...refer to doc)
     (set up home page vote)
     (listen to port 3000...not smooth sounds)
+set up layout.ejs
+create root page

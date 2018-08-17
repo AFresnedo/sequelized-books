@@ -5,17 +5,17 @@ var express = require('express');
 
 // global variables
 var app = express();
-// ./ to tell it it's a folder and not a module name (sequilize is here too)
-var db = require('./models');
 
 // set and use statements
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
+app.use('/books', require('./controllers/books'));
+
 // define routes
 app.get('/', function(req, res) {
-  res.send('root has been reached');
+  res.render('home');
 });
 
 // listen on port 3000
