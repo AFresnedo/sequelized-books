@@ -5,8 +5,9 @@ sudo npm i pg pg-hstore sequelize
 touch index.js
 mkdir public
 touch .gitignore
-(add node_modules to .gitignore)
+(add node_modules, .env to .gitignore)
 git init
 (make git repository on github)
 git remote add github
 (link for above, on another line for copy-paste)
+git push --set-upstream github maseter
