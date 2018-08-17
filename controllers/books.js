@@ -43,5 +43,14 @@ router.post('/', function(req, res) {
   });
 });
 
+router.get('/:id', function(req, res) {
+  db.book.findById(req.params.id).then(function(foundBook){
+    res.send(foundBook);
+  }).catch(function(err){
+    console.log('err', err);
+    res.send('horrible 404 page, beware!');
+  });
+});
+
 // export router so other files can use it
 module.exports = router;

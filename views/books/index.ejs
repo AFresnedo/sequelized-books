@@ -1,7 +1,10 @@
 <h2>Books</h2>
 <% books.forEach(function(b){ %>
 <div>
-  <p><%= b.title %> <%= b.author %></p>
+  <p>
+  <a href="/books/<%= b.id %>"> <%= b.title %> </a>
+  by <%= b.author %>
+  </p>
   <p>It's <%= b.pages %> pages long.</p>
   <hr>
 </div>
