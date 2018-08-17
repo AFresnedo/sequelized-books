@@ -1,3 +1,4 @@
+(use env variable for user/pass when using real user/pass)
 mkdir folder for app
 sudo npm init -y
 sudo npm i express ejs express-ejs-layouts body-parser
@@ -27,3 +28,10 @@ sequelize model:create
 sequelize db:migrate
 (runs up function)
 (sequelize db:migrate:undo to run down function)
+-----------------moving onto express
+setup index.js
+    (require stuff)
+    (set viewengine)
+    (add any use statements needed...refer to doc)
+    (set up home page vote)
+    (listen to port 3000...not smooth sounds)
